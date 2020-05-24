@@ -113,7 +113,13 @@ class WebSite:
         driver.get("http://" + self.url)
         driver.save_screenshot(folder + fileName)
 
+    global var_log
+    var_log = "Pourcentage de modifications = "
+    def writeLog(self, param):
+        global var_log
+        var_log += str(param)
+
     def comparePicture(self):
-        # Verificationde la liste des images
-        image.pictureCompare()
+        self.writeLog(image.pictureCompare())
+        print(" "+str(var_log))
         image.getDiff()
