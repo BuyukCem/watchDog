@@ -1,0 +1,10 @@
+version: '3.6'
+services:
+    mongo:
+        image: 'mongo:4.0.7'
+        ports:
+            - '2717:27017'
+        environment:
+            - MONGO_INITDB_DATABASE=${DB_NAME}
+            - MONGO_INITDB_ROOT_USERNAME=${DB_USERNAME}
+            - MONGO_INITDB_ROOT_PASSWORD=${DB_PASSWORD}

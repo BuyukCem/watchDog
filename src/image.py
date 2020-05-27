@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-import os
-import util
 from skimage.measure import compare_ssim
 import cv2
 import cv2 as cv
 import imutils
-import numpy as np
 
 '''
 def saveScreenshotReference(driver, WebImageReference):

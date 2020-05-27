@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2c412888-6a79-4f29-9b63-7e1b13e2384a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/image.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/website.py" beforeDir="false" afterPath="$PROJECT_DIR$/website.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/image.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/util.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/website.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/website.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,11 +57,14 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/img" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/img" />
     </key>
   </component>
   <component name="RunManager">
@@ -81,15 +107,26 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="2180" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589999531232">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2180" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1589999531232" />
-    <state x="2124" y="355" width="623" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590189039248">
+    <state x="2124" y="355" width="623" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590434994762">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2124" y="355" width="623" height="403" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1590189039248" />
+    <state x="2124" y="355" width="623" height="403" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1590434994762" />
     <state x="2247" y="301" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1590100789914">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -98,26 +135,26 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2505" y="311" width="424" height="491" key="FileChooserDialogImpl/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1590189710052" />
-    <state width="1843" height="237" key="GridCell.Tab.0.bottom" timestamp="1590348765538">
+    <state width="910" height="237" key="GridCell.Tab.0.bottom" timestamp="1590353111558">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1897" height="275" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590066545195" />
-    <state width="1843" height="237" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1590348765538" />
-    <state width="1843" height="237" key="GridCell.Tab.0.center" timestamp="1590348765537">
+    <state width="910" height="237" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1590353111558" />
+    <state width="910" height="237" key="GridCell.Tab.0.center" timestamp="1590353111558">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1897" height="275" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590066545195" />
-    <state width="1843" height="237" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1590348765537" />
-    <state width="1843" height="237" key="GridCell.Tab.0.left" timestamp="1590348765537">
+    <state width="910" height="237" key="GridCell.Tab.0.center/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1590353111558" />
+    <state width="910" height="237" key="GridCell.Tab.0.left" timestamp="1590353111558">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1897" height="275" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590066545195" />
-    <state width="1843" height="237" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1590348765537" />
-    <state width="1843" height="237" key="GridCell.Tab.0.right" timestamp="1590348765537">
+    <state width="910" height="237" key="GridCell.Tab.0.left/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1590353111558" />
+    <state width="910" height="237" key="GridCell.Tab.0.right" timestamp="1590353111558">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1897" height="275" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1053@0.27.1920.1053" timestamp="1590066545195" />
-    <state width="1843" height="237" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1590348765537" />
+    <state width="910" height="237" key="GridCell.Tab.0.right/1920.0.1920.1080/0.27.1920.1053@1920.0.1920.1080" timestamp="1590353111558" />
     <state x="2211" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1590228744322">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

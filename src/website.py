@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 import requests
-import subprocess
 
 import os
 import time
-import util
-import image
+from utils import util
+from src import image
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
@@ -81,10 +80,10 @@ class WebSite:
         timestr = time.strftime("%d-%m-%Y_%I-%M-%S")
         fileName = timestr + '.png'
 
-        ListFolder = os.listdir("./img/screenshotReference/")
+        ListFolder = os.listdir("../public/img/screenshotReference/")
         if not util.search(ListFolder, folder):
             try:
-                os.mkdir("./img/screenshotReference/" + self.FolderName)
+                os.mkdir("./public/img/screenshotReference/" + self.FolderName)
             except OSError:
                 print(
                     "Creation of the directory " + self.FolderName + " failed ./img/screenshotReference/" + self.FolderName)
@@ -96,12 +95,12 @@ class WebSite:
         driver.save_screenshot(folder + fileName)
 
     def createComparerPicture(self):
-        folder = "./img/controleScreenshot/" + self.FolderName + "/"
+        folder = "./public/img/controleScreenshot/" + self.FolderName + "/"
 
         timestr = time.strftime("%d-%m-%Y_%I-%M-%S")
         fileName = timestr + '.png'
 
-        ListFolder = os.listdir("./img/controleScreenshot/")
+        ListFolder = os.listdir("../public/img/controleScreenshot/")
         if not util.search(ListFolder, folder):
             try:
                 os.mkdir("./img/controleScreenshot/" + self.FolderName)
