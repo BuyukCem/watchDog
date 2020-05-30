@@ -1,13 +1,8 @@
 #!/usr/bin/env python3
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-import os
-import util
 from skimage.measure import compare_ssim
 import cv2
 import cv2 as cv
 import imutils
-import numpy as np
 
 '''
 def saveScreenshotReference(driver, WebImageReference):
@@ -73,8 +68,9 @@ def pictureCompare():
     # base_half = cv.compareHist(hist_base, hist_half_down, compare_method)
     base_test1 = cv.compareHist(hist_base, hist_test1, compare_method)
     # base_test2 = cv.compareHist(hist_base, hist_test2, compare_method)
-    print('Method:', compare_method, 'Perfect, Base-Test(1) :', \
-          base_base, '/', base_test1)
+    print('Method:', compare_method, 'Perfect, Base-Test(1) :',
+          base_base, '/', str(base_test1))
+
     return base_test1
 
 
@@ -90,13 +86,9 @@ def getDiff():
     imageA = cv2.imread(imageA)
     imageB = cv2.imread(imageB)
 
-    print(imageA.shape)
-    print(imageB.shape)
     imagesize = imageA.shape
     imageB = cv2.resize(imageB, (imagesize[1], imagesize[0]))
 
-    print(imageA.shape)
-    print(imageB.shape)
     # convert the images to grayscale
     grayA = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
     grayB = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)

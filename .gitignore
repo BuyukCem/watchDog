@@ -1,3 +1,4 @@
+.idea
 __pycache__/
 *.py[cod]
 *$py.class
@@ -12,4 +13,4 @@ __pycache__/
 pip-log.txt
 pip-delete-this-directory.txt
 
-img/*
+public/img/*

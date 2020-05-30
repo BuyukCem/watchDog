@@ -1,4 +1,4 @@
-import website
+from src import website
 
 web = website.WebSite("www.symbiosys.com/fr-be/")
 
