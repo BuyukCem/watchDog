@@ -7,9 +7,9 @@ web = website.WebSite("www.symbiosys.com/fr-be/")
 
 
 # 1 --
-#web.createReference()
-#web.createComparerPicture()
+# web.createReference()
+# web.createComparerPicture()
 
 
 ## 2 -- commparaisons des images
-web.comparePicture()
+web.findWordInPicture("dog", '/usr/share/tesseract-ocr/4.00/tessdata')

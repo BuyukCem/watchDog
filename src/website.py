@@ -7,18 +7,19 @@ from utils import util
 from src import image
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+import urllib.request
+import urllib.parse
 
 class WebSite:
     def __init__(self, webSiteUrl):
         self.url = webSiteUrl
         self.FolderName = self.url.replace('/', '-')
-
         self.statusCode = 0
         self.listScrennshotReference = []
         # self.WebImageReference = imgName.replace('/', '-')
 
-    def webBrowsing(self):
+    def webBrowsingOption(self):
         chrome_options = Options()
         chrome_options.add_argument("--headless")
         chrome_options.add_argument("--disable-web-security")
@@ -31,7 +32,7 @@ class WebSite:
         return status.status_code
 
     def timeToLoad(self):
-        driver = self.webBrowsing()
+        driver = self.webBrowsingOption()
         navigationStart = driver.execute_script("return window.performance.timing.navigationStart")
         responseStart = driver.execute_script("return window.performance.timing.responseStart")
         domComplete = driver.execute_script("return window.performance.timing.domComplete")
@@ -45,9 +46,8 @@ class WebSite:
 
         driver.quit()
 
-    def findElement(self, findEllement):
-        # menu-item-6321
-        driver = self.webBrowsing()
+    def findElementById(self, findEllement):
+        driver = self.webBrowsingOption()
         data = driver.find_elements_by_id(findEllement)
         print(type(data))
         if len(data) != 0:
@@ -56,6 +56,7 @@ class WebSite:
         else:
             print("We did not find your item")
             print(data)
+        driver.quit()
 
     def takeScreenshot(self):
         driver = webdriver.Chrome()
@@ -112,13 +113,52 @@ class WebSite:
         driver.get("http://" + self.url)
         driver.save_screenshot(folder + fileName)
 
+    def findWordInPicture(self, word, picture_dir):
+        data = image.findWordInPicture(word, picture_dir)
+        if data:
+            print('its true')
+        else:
+            print('its false')
+
+    # TODO change this code
     global var_log
     var_log = "Pourcentage de modifications = "
+
     def writeLog(self, param):
         global var_log
         var_log += str(param)
 
     def comparePicture(self):
         self.writeLog(image.pictureCompare())
-        print(" "+str(var_log))
+        print(" " + str(var_log))
         image.getDiff()
+
+    def test(self):
+        # enable browser logging
+        d = DesiredCapabilities.CHROME
+        d['loggingPrefs'] = {'browser': 'ALL'}
+        driver = webdriver.Chrome(desired_capabilities=d)
+
+        # load the desired webpage
+        driver.get('http://symbiosys.com')
+
+        # print messages
+        for entry in driver.get_log('driver'):
+            print(entry)
+            # print messages
+        for entry in driver.get_log('browser'):
+            print(entry)
+        print(driver.log_types)
+
+    # TODO "Finir la fonction car y'a pas de token"
+    def GetPageSpeedScore(self, deviceType):
+        url = self.url
+        device_type = deviceType
+
+        # Making request
+        contents = urllib.request.urlopen(
+            'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url={}&strategy={}' \
+                .format(url, device_type)
+        ).read().decode('UTF-8')
+        print(contents)
+
