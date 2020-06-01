@@ -3,6 +3,7 @@ from skimage.measure import compare_ssim
 import cv2
 import cv2 as cv
 import imutils
+import pytesseract
 
 '''
 def saveScreenshotReference(driver, WebImageReference):
@@ -31,11 +32,11 @@ def saveScrennComparerPicture(driver, filename, folederName):
 
 def pictureCompare():
     # Path image
-    ReferencePict = "./img/screenshotReference/www.symbiosys.com-fr-be-/23-05-2020_11-28-03.png"
-    imageA = "./img/controleScreenshot/www.symbiosys.com-nl-be-/23-05-2020_11-26-15.png"
+    ReferencePict = "./public/img/screenshotReference/www.symbiosys.com-fr-be-/23-05-2020_11-28-03.png"
+    imageA = "./public/img/controleScreenshot/www.symbiosys.com-nl-be-/23-05-2020_11-26-15.png"
 
-    #ReferencePict = "./img/screenshotReference/www.symbiosys.com-fr-/23-05-2020_10-03-47.png"
-    #imageA = "./img/controleScreenshot/www.symbiosys.com-fr-/23-05-2020_10-04-45.png"
+    # ReferencePict = "./img/screenshotReference/www.symbiosys.com-fr-/23-05-2020_10-03-47.png"
+    # imageA = "./img/controleScreenshot/www.symbiosys.com-fr-/23-05-2020_10-04-45.png"
 
     ReferencePicture = cv.imread(ReferencePict)
     src_imageA = cv.imread(imageA)
@@ -75,12 +76,12 @@ def pictureCompare():
 
 
 def getDiff():
-    imageA = "./img/screenshotReference/www.symbiosys.com-fr-be-/23-05-2020_11-28-03.png"
-    imageB = "./img/controleScreenshot/www.symbiosys.com-nl-be-/23-05-2020_11-26-15.png"
+    imageA = "./public/img/screenshotReference/www.symbiosys.com-fr-be-/23-05-2020_11-28-03.png"
+    imageB = "./public/img/controleScreenshot/www.symbiosys.com-nl-be-/23-05-2020_11-26-15.png"
 
     # Path image
     # imageA = "./img/screenshotReference/www.symbiosys.com-fr-/23-05-2020_10-03-47.png"
-    #imageB = "./img/controleScreenshot/www.symbiosys.com-fr-/23-05-2020_10-04-45.png"
+    # imageB = "./img/controleScreenshot/www.symbiosys.com-fr-/23-05-2020_10-04-45.png"
 
     # load the two input images
     imageA = cv2.imread(imageA)
@@ -119,7 +120,7 @@ def getDiff():
         cv2.rectangle(imageA, (x, y), (x + w, y + h), (0, 0, 255), 2)
         cv2.rectangle(imageB, (x, y), (x + w, y + h), (0, 0, 255), 2)
 
-    cv2.imwrite("./img/" + "delta" + "test" + ".png", imageB)
+    cv2.imwrite("./public/img/" + "delta" + "test" + ".png", imageB)
     '''
     # show the output images
      cv2.imshow("Original", imageA)
@@ -129,3 +130,17 @@ def getDiff():
     # cv2.imshow("Thresh", thresh)
     cv2.waitKey(0)
     '''
+
+
+def findWordInPicture(word, picture_dir):
+    imageA = "./public/img/controleScreenshot/www.symbiosys.com-nl-be-/23-05-2020_11-26-15.png"
+
+    image = cv2.imread(imageA)
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    ret, threshold = cv2.threshold(gray, 55, 255, cv2.THRESH_BINARY)
+
+    data = pytesseract.image_to_string(threshold, config=picture_dir)
+    if data.find(word) != -1:
+        return True
+    else:
+        return False
