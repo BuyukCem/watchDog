@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import time
+
 from skimage.measure import compare_ssim
 import cv2
 import cv2 as cv
@@ -133,14 +135,18 @@ def getDiff():
 
 
 def findWordInPicture(word, picture_dir):
-    imageA = "./public/img/controleScreenshot/www.symbiosys.com-nl-be-/23-05-2020_11-26-15.png"
+    word = word.upper()
+    dir_resseract = '/usr/share/tesseract-ocr/4.00/tessdata'
 
-    image = cv2.imread(imageA)
+    image = cv2.imread(picture_dir)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     ret, threshold = cv2.threshold(gray, 55, 255, cv2.THRESH_BINARY)
+    data = pytesseract.image_to_string(threshold, config=dir_resseract)
+    data = data.upper()
 
-    data = pytesseract.image_to_string(threshold, config=picture_dir)
-    if data.find(word) != -1:
-        return True
-    else:
-        return False
+    print(data)
+    print(type(data))
+    for d in data.split():
+        if word == d:
+            return True
+    return False
